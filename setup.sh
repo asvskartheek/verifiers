@@ -25,9 +25,10 @@ main() {
 
     log_info "Cloning repository..."
     git clone https://github.com/asvskartheek/verifiers.git
-
-    log_info "Entering project directory..."
     cd verifiers
+    git checkout feat || git checkout -b feat
+
+    log_info "Switched to feat branch..."
 
     log_info "Installing uv..."
     curl -LsSf https://astral.sh/uv/install.sh | sh
