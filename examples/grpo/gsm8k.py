@@ -40,6 +40,8 @@ training_args.load_best_model_at_end = True
 training_args.save_total_limit = 2
 training_args.metric_for_best_model = "eval_reward"
 training_args.greater_is_better = True
+training_args.push_to_hub = True
+training_args.hub_model_id = f"asvs/GRPO-{run_name}"
 
 trainer = vf.GRPOTrainer(
     model=model,
@@ -49,5 +51,3 @@ trainer = vf.GRPOTrainer(
     peft_config=vf.lora_defaults(),
 )
 trainer.train()
-
-trainer.model.push_to_hub(f"asvs/GRPO-{run_name}", private=True)
