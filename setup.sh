@@ -23,10 +23,10 @@ main() {
     log_info "Installing git, tmux, htop, nvtop, cmake, python3-dev, cgroup-tools..."
     sudo apt install git tmux htop nvtop cmake python3-dev cgroup-tools vim -y
 
-    log_info "Cloning repository..."
-    git clone https://github.com/asvskartheek/verifiers.git
-    cd verifiers
-    git checkout feat || git checkout -b feat
+    # log_info "Cloning repository..."
+    # git clone https://github.com/asvskartheek/verifiers.git
+    # cd verifiers
+    # git checkout feat || git checkout -b feat
 
     log_info "Switched to feat branch..."
 
